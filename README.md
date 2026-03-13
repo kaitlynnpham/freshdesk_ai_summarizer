@@ -1,17 +1,18 @@
-This Lambda function, written in Ruby, automatically summarizes Freshdesk tickets to assist with troubleshooting.
-It is triggered whenever a new Jira troubleshooting ticket is created and uses data from both Freshdesk and AWS Bedrock to generate a concise summary of the issue.
+## Project Overview:
 
-Trigger:
-The function is invoked by a Jira webhook when a new troubleshooting ticket is created.
+This AWS Lambda function, written in Ruby, automatically summarizes Freshdesk support tickets to assist engineers with troubleshooting. The function is triggered when a new troubleshooting ticket is created in Jira and generates an AI-powered summary using AWS Bedrock based on the ticket's associated Freshdesk conversation. By automating the summarization process, this workflow helps engineers quickly understand the context of customer issues without manually reviewing the full conversation history.
 
-Fetch Freshdesk Data:
-It retrieves the Freshdesk link from the Jira ticket and calls the Freshdesk API to gather the full conversation history.
+## Workflow
+<img width="578" height="492" alt="Screen Shot 2026-03-12 at 5 57 21 PM" src="https://github.com/user-attachments/assets/6f654205-a7c2-4e1a-918a-0a879aa2b547" />
 
-Store in S3:
-The conversation data is saved as a .txt file in an Amazon S3 bucket.
+## Tools
+Programming Language: Ruby
 
-Summarize via Bedrock:
-The text file is analyzed using an AI model from AWS Bedrock to generate a concise summary of the ticket’s key issues.
+AWS Services : AWS Lambda, AWS Bedrock, S3 Buckets, API Gateway
 
-Update Jira Ticket:
-The summary is sent back to Jira via its REST API and added to a custom text field on the same ticket.
+APIs & Integrations: Jira REST API, Freshdesk API, Jira Webhooks
+
+Version Control: Git, GitHub
+
+
+
